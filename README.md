@@ -15,7 +15,7 @@ from pymbta3 import Alerts
 at = Alerts(key=YOUR_API_KEY_HERE)
 
 # Find all alerts affecting Alewife
-alerts = at.get_alert(stop='place-alfcl')
+alerts = at.get(stop='place-alfcl')
 
 # Find the short header for the alert
 for alert in alerts['data']:
@@ -26,12 +26,12 @@ for alert in alerts['data']:
 
 Alerts affecting Orange and Red lines
 ```python
-alerts = at.get_alert(route=['Orange', 'Red'])
+alerts = at.get(route=['Orange', 'Red'])
 ```
 
 Alerts affecting parking or Wheelchair use
 ```python
-alerts = at.get_alert(activity=['PARK_CAR', 'USING_WHEELCHAIR'])
+alerts = at.get(activity=['PARK_CAR', 'USING_WHEELCHAIR'])
 ```
 
 ### Include other data
@@ -42,7 +42,7 @@ from pymbta3 import Routes
 rt = Routes(key=YOUR_API_KEY_HERE)
 
 # Find all Route data for the Red Line
-alerts = rt.get_route(route='Red', include='stops')
+routes = rt.get(route='Red', include='stops')
 
 ```
 ### API Methods Implented
