@@ -44,9 +44,11 @@ rt = Routes(key=YOUR_API_KEY_HERE)
 # Find all Route data for the Red Line
 alerts = rt.get_route(route='Red', include='stops')
 
-
-
-
 ```
+### API Methods Implented
 
+- Alerts
+- Routes
+- Stops
+- Vehicles
 

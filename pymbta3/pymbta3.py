@@ -104,7 +104,7 @@ class PyMBTA3(object):
 class Alerts(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get_alert(self, include: Union[str, list, tuple] = None,
+    def get(self, include: Union[str, list, tuple] = None,
                   activity: Union[str, list, tuple] = None,
                   route_type: Union[str, list, tuple] = None,
                   direction_id: Union[str, list, tuple] = None,
@@ -144,7 +144,7 @@ class Alerts(PyMBTA3):
 class Routes(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get_route(self, include: Union[str, list, tuple] = None,
+    def get(self, include: Union[str, list, tuple] = None,
                   type: Union[str, list, tuple] = None,
                   direction_id: Union[str, list, tuple] = None,
                   route: Union[str, list, tuple] = None,
@@ -173,13 +173,13 @@ class Routes(PyMBTA3):
 class Vehicles(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get_vehicle(self, include: Union[str, list, tuple] = None,
-                    route_type: Union[str, list, tuple] = None,
-                    direction_id: Union[str, list, tuple] = None,
-                    route: Union[str, list, tuple] = None,
-                    label: Union[str, list, tuple] = None,
-                    trip: Union[str, list, tuple] = None,
-                    id: Union[str, list, tuple] = None):
+    def get(self, include: Union[str, list, tuple] = None,
+            route_type: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            label: Union[str, list, tuple] = None,
+            trip: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None):
         """
         List of vehicles (buses, ferries, and trains)
         https://api-v3.mbta.com/docs/swagger/index.html#/Vehicle/ApiWeb_VehicleController_index
@@ -194,4 +194,38 @@ class Vehicles(PyMBTA3):
         :param id: Filter by multiple IDs.
         """
         _CALL_KEY = "vehicles?"
+        return _CALL_KEY
+
+class Stops(PyMBTA3):
+
+    @PyMBTA3._call_api_on_func
+    def get(self, include: Union[str, list, tuple] = None,
+            date: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            latitude: Union[str, list, tuple] = None,
+            longitude: Union[str, list, tuple] = None,
+            radius: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None,
+            route_type: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            service: Union[str, list, tuple] = None,
+            location_type: Union[str, list, tuple] = None):
+        """
+        List of vehicles (buses, ferries, and trains)
+        https://api-v3.mbta.com/docs/swagger/index.html#/Vehicle/ApiWeb_VehicleController_index
+        Keyword Arguments:
+        :param include: Relationships to include. [parent_station, child_stops, recommended_transfers, facilities, route]
+        Includes data from related objects in the "included" keyword
+        :param date: Filter by date.
+        :param direction_id: Filter by direction of travel along the route.
+        :param latitude: Latitude in degrees North
+        :param longitude: Longitude in degrees East
+        :param radius: distance in degrees
+        :param route_type: Filter by route_type: https://developers.google.com/transit/gtfs/reference/routes-file.
+        :param route: Filter by /data/{index}/relationships/route/data/id.
+        :param id: Filter by multiple IDs.
+        :param service: Filter by service id.
+        :param location_type: Filter by location type.
+        """
+        _CALL_KEY = "stops?"
         return _CALL_KEY
