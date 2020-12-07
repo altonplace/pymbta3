@@ -104,19 +104,20 @@ class PyMBTA3(object):
 class Alerts(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get(self, include: Union[str, list, tuple] = None,
-                  activity: Union[str, list, tuple] = None,
-                  route_type: Union[str, list, tuple] = None,
-                  direction_id: Union[str, list, tuple] = None,
-                  route: Union[str, list, tuple] = None,
-                  stop: Union[str, list, tuple] = None,
-                  trip: Union[str, list, tuple] = None,
-                  facility: Union[str, list, tuple] = None,
-                  id: Union[str, list, tuple] = None,
-                  banner: bool = None,
-                  lifecycle: Union[str, list, tuple] = None,
-                  severity: Union[str, list, tuple] = None,
-                  datetime: str = None,):
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            activity: Union[str, list, tuple] = None,
+            route_type: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            stop: Union[str, list, tuple] = None,
+            trip: Union[str, list, tuple] = None,
+            facility: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None,
+            banner: bool = None,
+            lifecycle: Union[str, list, tuple] = None,
+            severity: Union[str, list, tuple] = None,
+            datetime: str = None,):
         """
         List active and upcoming system alerts
         https://api-v3.mbta.com/docs/swagger/index.html#/Alert/ApiWeb_AlertController_index
@@ -144,14 +145,15 @@ class Alerts(PyMBTA3):
 class Routes(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get(self, include: Union[str, list, tuple] = None,
-                  type: Union[str, list, tuple] = None,
-                  direction_id: Union[str, list, tuple] = None,
-                  route: Union[str, list, tuple] = None,
-                  stop: Union[str, list, tuple] = None,
-                  trip: Union[str, list, tuple] = None,
-                  id: Union[str, list, tuple] = None,
-                  date: str = None):
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            type: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            stop: Union[str, list, tuple] = None,
+            trip: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None,
+            date: str = None):
         """
         List active and upcoming system alerts
         https://api-v3.mbta.com/docs/swagger/index.html#/Route/ApiWeb_RouteController_index
@@ -173,7 +175,8 @@ class Routes(PyMBTA3):
 class Vehicles(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get(self, include: Union[str, list, tuple] = None,
+    def get(self, 
+            include: Union[str, list, tuple] = None,
             route_type: Union[str, list, tuple] = None,
             direction_id: Union[str, list, tuple] = None,
             route: Union[str, list, tuple] = None,
@@ -186,10 +189,10 @@ class Vehicles(PyMBTA3):
         Keyword Arguments:
         :param include: Relationships to include. [trip, stop, route]
         Includes data from related objects in the "included" keyword
-        :param label: Filter by label.
         :param route_type: Filter by route_type: https://developers.google.com/transit/gtfs/reference/routes-file.
         :param direction_id: Filter by direction of travel along the route.
         :param route: Filter by /data/{index}/relationships/route/data/id.
+        :param label: Filter by label.
         :param trip: Filter by /data/{index}/relationships/trip/data/id.
         :param id: Filter by multiple IDs.
         """
@@ -199,7 +202,8 @@ class Vehicles(PyMBTA3):
 class Stops(PyMBTA3):
 
     @PyMBTA3._call_api_on_func
-    def get(self, include: Union[str, list, tuple] = None,
+    def get(self, 
+            include: Union[str, list, tuple] = None,
             date: Union[str, list, tuple] = None,
             direction_id: Union[str, list, tuple] = None,
             latitude: Union[str, list, tuple] = None,
@@ -221,9 +225,9 @@ class Stops(PyMBTA3):
         :param latitude: Latitude in degrees North
         :param longitude: Longitude in degrees East
         :param radius: distance in degrees
+        :param id: Filter by multiple IDs.
         :param route_type: Filter by route_type: https://developers.google.com/transit/gtfs/reference/routes-file.
         :param route: Filter by /data/{index}/relationships/route/data/id.
-        :param id: Filter by multiple IDs.
         :param service: Filter by service id.
         :param location_type: Filter by location type.
         """
