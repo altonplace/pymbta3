@@ -285,12 +285,8 @@ class Schedules(PyMBTA3):
         :param include: Relationships to include. [stop, route, trip, prediction]
         Includes data from related objects in the "included" keyword
         :param direction_id: Filter by direction of travel along the route.
-        :param latitude: Latitude in degrees North
-        :param longitude: Longitude in degrees East
         :param max_time: Time after which schedule should not be returned.
         :param min_time: Time before which schedule should not be returned.
-        :param radius: distance in degrees
-        :param route_pattern: Filter by /included/{index}/relationships/route_pattern/data/id of a trip.
         :param route_type: Filter by route_type: https://developers.google.com/transit/gtfs/reference/routes-file.
         :param route: Filter by /data/{index}/relationships/route/data/id.
         :param stop: Filter by /data/{index}/relationships/stop/data/id.
