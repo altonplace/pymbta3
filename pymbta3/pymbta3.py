@@ -233,3 +233,65 @@ class Stops(PyMBTA3):
         """
         _CALL_KEY = "stops?"
         return _CALL_KEY
+
+class Predictions(PyMBTA3):
+
+    @PyMBTA3._call_api_on_func
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            latitude: Union[str, list, tuple] = None,
+            longitude: Union[str, list, tuple] = None,
+            radius: Union[str, list, tuple] = None,
+            route_pattern: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            stop: Union[str, list, tuple] = None,
+            trip: Union[str, list, tuple] = None):
+        """
+        List of predictions for trips.
+        https://api-v3.mbta.com/docs/swagger/index.html#/Prediction/ApiWeb_PredictionController_index
+        Keyword Arguments:
+        :param include: Relationships to include. [schedule, stop, route, trip, vehicle, alerts]
+        Includes data from related objects in the "included" keyword
+        :param direction_id: Filter by direction of travel along the route.
+        :param latitude: Latitude in degrees North
+        :param longitude: Longitude in degrees East
+        :param radius: distance in degrees
+        :param route_pattern: Filter by /included/{index}/relationships/route_pattern/data/id of a trip.
+        :param route: Filter by /data/{index}/relationships/route/data/id.
+        :param stop: Filter by /data/{index}/relationships/stop/data/id.
+        :param trip: Filter by /data/{index}/relationships/trip/data/id.
+        """
+        _CALL_KEY = "predictions?"
+        return _CALL_KEY
+
+class Schedules(PyMBTA3):
+
+    @PyMBTA3._call_api_on_func
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            max_time: Union[str, list, tuple] = None,
+            min_time: Union[str, list, tuple] = None,
+            route_type: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            stop_sequence: Union[str, list, tuple] = None,
+            stop: Union[str, list, tuple] = None,
+            trip: Union[str, list, tuple] = None):
+        """
+        List of schedules.
+        https://api-v3.mbta.com/docs/swagger/index.html#/Schedule/ApiWeb_ScheduleController_index
+        Keyword Arguments:
+        :param include: Relationships to include. [stop, route, trip, prediction]
+        Includes data from related objects in the "included" keyword
+        :param direction_id: Filter by direction of travel along the route.
+        :param max_time: Time after which schedule should not be returned.
+        :param min_time: Time before which schedule should not be returned.
+        :param route_type: Filter by route_type: https://developers.google.com/transit/gtfs/reference/routes-file.
+        :param route: Filter by /data/{index}/relationships/route/data/id.
+        :param stop: Filter by /data/{index}/relationships/stop/data/id.
+        :param stop_sequence: Filter by the index of the stop in the trip.
+        :param trip: Filter by /data/{index}/relationships/trip/data/id.
+        """
+        _CALL_KEY = "schedules?"
+        return _CALL_KEY
