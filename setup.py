@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name='pymbta3',
-    version='0.0.4dev',
+    version='0.0.5dev',
     packages=['pymbta3', ],
     license='MIT',
     author='Mike Anderson',

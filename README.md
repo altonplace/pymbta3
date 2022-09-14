@@ -53,4 +53,4 @@ routes = rt.get(route='Red', include='stops')
 - Vehicles
 - Predictions
 - Schedules
-
+- Trips

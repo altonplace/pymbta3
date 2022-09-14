@@ -295,3 +295,30 @@ class Schedules(PyMBTA3):
         """
         _CALL_KEY = "schedules?"
         return _CALL_KEY
+
+class Trips(PyMBTA3):
+
+    @PyMBTA3._call_api_on_func
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            date:  Union[str, list, tuple] = None,
+            route_pattern: Union[str, list, tuple] = None,
+            direction_id: Union[str, list, tuple] = None,
+            route: Union[str, list, tuple] = None,
+            name: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None):
+        """
+        List of trips, the journies of a particular vehicle through a set of stops on a primary route and zero or more alternative routes that can be filtered on.
+        https://api-v3.mbta.com/docs/swagger/index.html#/Trip/ApiWeb_TripController_index
+        Keyword Arguments:
+        :param include: Relationships to include. [vehicle, service, shape, predictions, stops, route_pattern, route]
+        Includes data from related objects in the "included" keyword
+        :param date: Filter by date.
+        :param route_pattern: Filter by route_pattern: https://developers.google.com/transit/gtfs/reference/routes-file.
+        :param direction_id: Filter by direction of travel along the route.
+        :param route: Filter by /data/{index}/relationships/route/data/id.
+        :param name: Filter by name.
+        :param id: Filter by multiple IDs.
+        """
+        _CALL_KEY = "trips?"
+        return _CALL_KEY
