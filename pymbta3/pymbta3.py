@@ -322,3 +322,20 @@ class Trips(PyMBTA3):
         """
         _CALL_KEY = "trips?"
         return _CALL_KEY
+
+class Facilities(PyMBTA3):
+
+    @PyMBTA3._call_api_on_func
+    def get(self, 
+            include: Union[str, list, tuple] = None,
+            id: Union[str, list, tuple] = None):
+        """
+        Amenities at a station stop (/data/relationships/stop) such as elevators, escalators, parking lots, and bike storage.
+        https://api-v3.mbta.com/docs/swagger/index.html#/Facility/ApiWeb_FacilityController_index
+        Keyword Arguments:
+        :param include: Relationships to include. [stop]
+        Includes data from related objects in the "included" keyword
+        :param id: Filter by multiple IDs.
+        """
+        _CALL_KEY = "facilities?"
+        return _CALL_KEY
