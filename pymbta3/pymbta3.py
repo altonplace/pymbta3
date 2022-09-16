@@ -328,7 +328,8 @@ class Facilities(PyMBTA3):
     @PyMBTA3._call_api_on_func
     def get(self, 
             include: Union[str, list, tuple] = None,
-            id: Union[str, list, tuple] = None):
+            id: Union[str, list, tuple] = None,
+            stop: Union[str, list, tuple] = None):
         """
         Amenities at a station stop (/data/relationships/stop) such as elevators, escalators, parking lots, and bike storage.
         https://api-v3.mbta.com/docs/swagger/index.html#/Facility/ApiWeb_FacilityController_index
