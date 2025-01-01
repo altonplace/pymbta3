@@ -1,0 +1,57 @@
+connectors:
+  ground:
+    pincount: 1
+
+  J1:
+    type: D-Sub
+    subtype: female
+    pincount: 44
+    pinlabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', A, B, C, D, E, F, H, J, K, L, M, N, P, R, S, T, U, V, W, X, Y, Z]
+  J2:
+    type: D-Sub
+    subtype: female
+    pincount: 44
+    pinlabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', A, B, C, D, E, F, H, J, K, L, M, N, P, R, S, T, U, V, W, X, Y, Z]
+  LemoPilot:
+    pincount: 6
+    pinlabels: ['Audio Power', 'Audio Ground', 'Phones Left', 'Phones Right', 'Mic Hi', 'Mic Lo']
+  LemoPass:
+    pincount: 6
+    pinlabels: ['Audio Power', 'Audio Ground', 'Phones Left', 'Phones Right', 'Mic Hi', 'Mic Lo']
+
+cables:
+  W1:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    wirecount: 4
+    shield: true
+  W2:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: DIN
+    wirecount: 1
+  WireLemoPilot:
+    gauge: 0.25 mm2
+    length: 0.2
+    color_code: White
+    wirecount: 6
+
+connections:
+  -
+    - J1: [1, 2, 3, 4]
+    - W1: [1, 2, 3, 4]
+    - J2: [1, 2, 3, 4]
+  -
+    - J1: [1, 2, 3]
+    - W1: [1, 2, 3]
+  -
+    - J1: [44]
+    - W2: [1]
+    - ground: [1]
+  -
+    - J1: [8,9,10,11,12,13]
+    - WireLemoPilot: [1,2,3,4,5,6]
+    - LemoPilot: [1,2,3,4,5,6]
+  
+
