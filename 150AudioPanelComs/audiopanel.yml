@@ -1,57 +1,506 @@
+##### Connectors ######
 connectors:
-  ground:
+  S:
+    style: simple
+    type: Splice
+    color: CU
+  SW:
+    pincount: 2
+    pinlabels: [Load, Supply]
+    type: CB Switch
+    image: 
+      src: /Users/mike/code/harnesses/150AudioPanelComs/resources/switch.png
+      width: 60
+
+  AircraftGround:
+    pincount: 1
+  AircraftPositiveBus:
     pincount: 1
 
-  J1:
+  J1BottomPMA7000:
     type: D-Sub
     subtype: female
     pincount: 44
-    pinlabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', A, B, C, D, E, F, H, J, K, L, M, N, P, R, S, T, U, V, W, X, Y, Z]
-  J2:
+    pins: [
+           1, #1
+           2, #2
+           3, #3
+           4, #4
+           5, #5
+           6, #6
+           7, #7
+           8, #8
+           9, #9
+           10, #10
+           11, #11
+           12, #12
+           13, #13
+           14, #14
+           15, #15
+           16, #16
+           17, #17
+           18, #18
+           19, #19
+           20, #20
+           21, #21
+           22, #22
+           A, #A
+           B, #B
+           C, #C
+           D, #D
+           E, #E
+           F, #F
+           H, #H
+           J, #J
+           K, #K
+           L, #L
+           M, #M
+           N, #N
+           P, #P
+           R, #R
+           S, #S
+           T, #T
+           U, #U
+           V, #V
+           W, #W
+           X, #X
+           Y, #Y
+           Z #Z
+           ]
+    pinlabels: [
+                Chassis Ground, #1
+                MM Sense Output, #2
+                Pilot Headphones (rt), #3
+                Amber Lamp Out, #4
+                Blue Lamp Out, #5
+                DME Audio Hi, #6
+                Not Used, #7
+                Pilot Mic Audio Hi In, #8
+                Com 1 Audio Hi, #9
+                Com 2 Audio Hi, #10
+                AUX Audio Input Hi, #11 
+                Nav 1 Audio Hi, #12
+                Nav 2 Audio Hi', #13
+                Alternate ICS Mode, #14
+                Com 3 Mic Key, #15
+                Com 2 SPKR load, #16
+                Unswitched Audio In \#2, #17 
+                PA Mute, #18
+                Com 1 SPKR load, #19
+                Aircraft Power 11-33 VDC, #20
+                Ext. Marker Audio Hi, #21
+                Cabin Spkr L, #22
+                MKR Coax Shield, #A
+                MKR Antenna, #B
+                White Lamp Output, #C 
+                14 V Light Hi, #D
+                Light Lo, #E
+                28V Lights Hi, #F 
+                Com 2 Mic Audio Hi, #H 
+                Com 3 Audio Hi, #J
+                Com 3 Mic Audio Hi, #K
+                Com 1 Spkr Load, #L
+                Com 2 SPKR Load, #M
+                Not Used, #N
+                Com 1 Mic Audio Hi, #P
+                Com 1 Mic Key, #R
+                ADF Audio Hi, #S
+                Unswitched Audio In \#1, #T
+                Unswitched Audio In \#3, #U
+                Com 2 Mic Key, #V
+                Cabin Spkr Out, #W
+                Unswitched Audio In \#4, #X
+                Pilot Mic PTT, #Y
+                Aircraft Ground #Z
+                ]
+  J2TopPMA7000:
     type: D-Sub
     subtype: female
     pincount: 44
-    pinlabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', A, B, C, D, E, F, H, J, K, L, M, N, P, R, S, T, U, V, W, X, Y, Z]
-  LemoPilot:
+    pins: [
+           1, #1
+           2, #2
+           3, #3
+           4, #4
+           5, #5
+           6, #6
+           7, #7
+           8, #8
+           9, #9
+           10, #10
+           11, #11
+           12, #12
+           13, #13
+           14, #14
+           15, #15
+           16, #16
+           17, #17
+           18, #18
+           19, #19
+           20, #20
+           21, #21
+           22, #22
+           A, #A
+           B, #B
+           C, #C
+           D, #D
+           E, #E
+           F, #F
+           H, #H
+           J, #J
+           K, #K
+           L, #L
+           M, #M
+           N, #N
+           P, #P
+           R, #R
+           S, #S
+           T, #T
+           U, #U
+           V, #V
+           W, #W
+           X, #X
+           Y, #Y
+           Z #Z
+           ]
+    pinlabels: [
+                Pilot Phone Audio Hi (Left), #1
+                Copilot Phone Audio (Lt), #2
+                Copilot Phone Audio (Rt), #3
+                Pass 1 Mic Audio H, #4
+                Pass 2 Mic Audio Hi, #5
+                Pass 3 Mic Audio Hi, #6
+                Pass 4 Mic Audio Hi, #7
+                Copilot Mic Audio Hi, #8
+                Copilot Mic PTT, #9
+                Swap Switch, #10
+                Passenger Headphone Audio (R), #11 
+                Passenger Audio (L), #12
+                Entertainment \#2 in (R), #13
+                Entertainment \#2 In (L), #14
+                Entertainment \#1 In (R), #15
+                Entertainment \#1 Input (L), #16
+                No Connection, #17 
+                PA Activate, #18
+                No Connection, #19
+                No Connection, #20
+                No Connection, #21
+                No Connection, #22
+                AUX Control Out, #A
+                Copilot Phone Audio Lo, #B
+                Expansion Power Out, #C 
+                Pass 1 Mic Audio Lo, #D
+                Pass 2 Mic Audio Lo, #E
+                Pass 3 Mic Audio Lo, #F 
+                Pass 4 Mic Audio Lo, #H 
+                Duplex Enable, #J
+                Copilot Mic Audio Lo, #K
+                Copilot Cellphone Off Hook, #L
+                Pass Cellphone Off Hook, #M
+                Passenger Headphone Audio Lo, #N
+                Expansion Input, #P
+                Ent. \# 2 Low, #R
+                Expansion Output, #S
+                Ent. \#1 Input Lo, #T
+                No Connection, #U
+                Mute 2, #V
+                No Connection, #W
+                No Connection, #X
+                No Connection, #Y
+                No Connection #Z
+                ]
+  Lemo:
     pincount: 6
     pinlabels: ['Audio Power', 'Audio Ground', 'Phones Left', 'Phones Right', 'Mic Hi', 'Mic Lo']
-  LemoPass:
-    pincount: 6
-    pinlabels: ['Audio Power', 'Audio Ground', 'Phones Left', 'Phones Right', 'Mic Hi', 'Mic Lo']
+  KX155_P401: # Needs Review of Part Number
+    type: D-Sub
+    subtype: female
+    pincount: 30
+    pins: [
+           1, #1
+           2, #2
+           3, #3
+           4, #4
+           5, #5
+           6, #6
+           7, #7
+           8, #8
+           9, #9
+           10, #10
+           11, #11
+           12, #12
+           13, #13
+           14, #14
+           15, #15
+           A, #A
+           B, #B
+           C, #C
+           D, #D
+           E, #E
+           F, #F
+           H, #H
+           J, #J
+           K, #K
+           L, #L
+           M, #M
+           N, #N
+           P, #P
+           R, #R
+           S #S
 
+           ]
+    pinlabels: [
+                NOT CONNECTED, #1
+                COMM MIC AUDIO, #2
+                CLOCK BUS, #3
+                NOT CONNECTED, #4
+                DATA BUS, #5
+                COMM MIC KEY, #6
+                NOT CONNECTED, #7
+                ILS ENERGIZE, #8
+                COM AUDIO HI, #9
+                NAV AUDIO HI, #10
+                SWITCHED POWER IN, #11 
+                SWITCHED POWER OUT, #12
+                NAV REMOTE TRANSFER (OPT), #13
+                POWER IN+, #14
+                POWER IN-, #15
+                RNAV MODE, #A
+                INTERCOM MIC, #B
+                NOT CONNECTED, #C 
+                DME COMMON, #D
+                NOT CONNECTED, #E
+                RNAV/CHAN REQUEST, #F 
+                VOR/LOC COMPOSITE OUT, #H 
+                NOT CONNECTED, #J
+                COM AUDIO LO, #K
+                NAV AUDIO LO, #L
+                SWITCHED POWER IN, #M
+                SWITCHED POWER OUT, #N
+                COMM REMOTE TRANSFER (OPT), #P
+                POWER IN+, #R
+                POWER IN- #S
+                ]  
+  AV20:
+    pincount: 9
+    type: D-Sub
+    subtype: female
+    pinlabels: [
+                OAT PWR, #1
+                UAT IN, #2
+                RESERVED, #3
+                RESERVED, #4
+                POWER IN, #5
+                OAT IN, #6
+                AUDIO +, #7
+                AUDIO G, #8
+                GND #9
+    ]
+  KX155_P901: # Needs Review of Part Number
+    type: D-Sub
+    subtype: female
+    pincount: 14
+    pins: [
+           4, #4
+           13, #13
+           14, #14
+           15, #15
+           16, #16
+           17, #17
+           18, #18
+           D, #D
+           P, #P
+           R, #R
+           S, #S
+           T, #T
+           U, #U
+           V #V
+           ]
+    pinlabels: [
+                NOT CONNECTED, #4
+                NOT CONNECTED, #13
+                GS -FLAG, #14
+                GS +UP, #15
+                GS +DOWN, #16
+                GS +FLAG, #17 
+                NOT CONNECTED, #18
+                NOT CONNECTED, #D
+                NOT CONNECTED, #P
+                GS -FLAG, #R
+                GS +UP, #S
+                GS +DOWN, #T
+                GS +FLAG, #U
+                NOT CONNECTED #V
+    ]
+  PTT_Button:
+    pincount: 2
+
+
+##### Cables #####
 cables:
+  # Basic Wires
+  WireBLK: &template_wire_black
+    wirecount: 1
+    colors: [BK]
+    gauge: 18 awg
+  WireRED: &template_wire_red
+    colors: [RD]
+    gauge: 18 awg
+  WireWHT: &template_wire_wht
+    category: bundle
+    wirecount: 1
+    colors: [WH]
+    gauge: 22 awg
+  WireShielded: &template_wire_shielded
+    colors: [WH]
+    gauge: 22 awg
+    shield: true
   W1:
     gauge: 0.25 mm2
     length: 0.2
-    color_code: DIN
+    colors: [WH]
+    # color_code: DIN
     wirecount: 4
     shield: true
   W2:
     gauge: 0.25 mm2
     length: 0.2
-    color_code: DIN
+    colors: [WH]
+    # color_code: DIN
     wirecount: 1
-  WireLemoPilot:
-    gauge: 0.25 mm2
-    length: 0.2
-    color_code: White
-    wirecount: 6
 
-connections:
-  -
-    - J1: [1, 2, 3, 4]
-    - W1: [1, 2, 3, 4]
-    - J2: [1, 2, 3, 4]
-  -
-    - J1: [1, 2, 3]
-    - W1: [1, 2, 3]
-  -
-    - J1: [44]
-    - W2: [1]
-    - ground: [1]
-  -
-    - J1: [8,9,10,11,12,13]
-    - WireLemoPilot: [1,2,3,4,5,6]
-    - LemoPilot: [1,2,3,4,5,6]
+  AV20Harness:
+    wirecount: 9
+    gauge: 22 awg
+  ComPower:
+    wirecount: 2
+    colors: [RD]
+  COM1AudioPanel:
+    colors: [WH]
+  COM1CB:
+    <<: *template_wire_red
+    wirecount: 2
+  CBS_2_Bus:
+    <<: *template_wire_red
+    wirecount: 6
+  COM401_2_AP:
+    <<: *template_wire_wht
+    wirecount: 4
+  3WS:
+    <<: *template_wire_shielded
+    wirecount: 3
+  2W:
+    <<: *template_wire_wht
+    wirecount: 2
+
   
 
+
+
+
+##### Connections #####
+connections:
+  # Audio Panel Bottom
+  - # Ground
+    - J1BottomPMA7000: [Z]
+    - WireBLK.
+    - AircraftGround: [1]
+ 
+  # Pilot Headphones  
+
+  - # Pilot Audio Phones
+    - J1BottomPMA7000: [22,3]
+    - 3WS.PilotAudio: [1,2]
+    - Lemo.Pilot: [2,4]
+
+  - # Pilot Audio Phones
+    - J2TopPMA7000: [1]
+    - 3WS.PilotAudio: [3]
+    - Lemo.Pilot: [3]
+
+  - # Pilot Audio Phones
+    - J1BottomPMA7000: [1]
+    - 3WS.PilotAudio: [s]
+  
+  # Pilot Audio Mic
+  - 
+    - J1BottomPMA7000: [8]
+    - 3WS.PilotPhonesMic: [1]
+    - Lemo.Pilot: [5]
+  - 
+    - J1BottomPMA7000: [1]
+    - 3WS.PilotPhonesMic: [3]
+    - S.PilotMIC
+  
+  - 
+    - S.PilotMIC
+    - WireWHT.
+    - Lemo.Pilot: [6]
+
+  - 
+    - S.PilotMIC
+    - 2W.PilotPTT: [2]
+    - PTT_Button.PTT_Pilot: [2]
+
+  # -
+  #   - J1BottomPMA7000: [Y]
+  - 
+    - J1BottomPMA7000: [1]
+    - 3WS.PilotPhonesMic: [s]
+  
+
+  - 
+    - J1BottomPMA7000: [Y]
+    - 2W.PilotPTT: [1]
+    - PTT_Button.PTT_Pilot: [1]
+
+    ##########
+  
+#   - 
+#     - J1BottomPMA7000: [P, R, 9, 12]
+#     - COM401_2_AP.COM1: [1-4]
+#     - KX155_P401.COM1_401: [2, 6, 9, 10]
+#   -
+#     - J1BottomPMA7000: [H, V, 10, 13]
+#     - COM401_2_AP.COM2: [1-4]
+#     - KX155_P401.COM2_401: [2, 6, 9, 10] 
+  
+  
+
+#   # + and -
+#   -
+#     - KX155_P401.COM1_401: [14, R]
+#     - COM1CB: [1-2]
+#     - SW.CB_COM1: [Load, Load]
+#   - 
+#     - SW.CB_COM1: [Supply]
+#     - CBS_2_Bus: [1]
+#     - AircraftPositiveBus: [1]
+#   -
+#     - KX155_P401.COM2_401: [14, R]
+#     - WireRED.
+#     - SW.CB_COM2: [Load, Load]
+#   - 
+#     - SW.CB_COM2: [Supply]
+#     - CBS_2_Bus: [2]
+#     - AircraftPositiveBus: [1]
+#   -
+#     - KX155_P401.COM1_401: [K, L]
+#     - WireBLK.
+#     - S.AP_G: [1,1]
+#   -
+#     - KX155_P401.COM2_401: [K, L]
+#     - WireBLK.
+#     - S.AP_G: [1,1]
+    
+#   -
+#     - S.AP_G: [1]
+#     - WireBLK.
+#     - J1BottomPMA7000: [1]
+
+# # AV-20
+#   -
+#     - AV20: [9]
+#     - AV20Harness: [9]
+#     - AircraftGround: [1]
+ 
