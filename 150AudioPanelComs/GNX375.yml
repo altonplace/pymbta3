@@ -1,0 +1,466 @@
+##### Connectors ######
+connectors:
+  S:
+    style: simple
+    type: Splice
+    color: CU
+  SW:
+    pincount: 2
+    pinlabels: [Load, Supply]
+    type: CB Switch
+    image: 
+      src: /Users/mike/code/harnesses/150AudioPanelComs/resources/switch.png
+      width: 60
+  AircraftGround:
+    pincount: 1
+  AircraftPositiveBus:
+    pincount: 1
+
+  J3751MainConnector:
+    type: D-Sub
+    subtype: female
+    pincount: 62
+    pins: [
+           21, # Power In
+           42, # Power In
+           20, # Ground
+           38, # Power control
+           41, # Ground
+           46, # Audio Out
+           47, # Audio GND
+           0, # Shield
+           ]
+    pinlabels: [
+                Power In, #1
+                Power In, #2
+                Ground, #3
+                Power Control, #5                
+                Ground, #4
+                Audio Out, #6
+                Audio GND, #7
+                Shield, #0
+                ]
+  J3752ADSBNAVConnector:
+    type: D-Sub
+    subtype: female
+    pincount: 44
+    pins: [
+           3,
+           4,
+           18,
+           19,
+           16,
+           21,
+           35,
+           30,
+           44,
+           0,
+           ]
+    pinlabels: [
+                Ethernet Out 1A,
+                Ethernet In 1A,
+                Ethernet Out 1B,
+                Ethernet In 1B,
+                RS-232 OUT 2,
+                RS-232 IN 2, 
+                RS-232 GND,
+                Ground, 
+                Power, 
+                Shield,
+                ]
+  Lemo:
+    pincount: 6
+    pinlabels: [
+                Audio Power,
+                Audio Ground,
+                Phones Left,
+                Phones Right,
+                Mic Hi,
+                Mic Lo,
+                ]
+    type: D-Sub
+    subtype: female
+
+  AV20:
+    pincount: 9
+    type: D-Sub
+    subtype: female
+    pinlabels: [
+                OAT PWR, #1
+                UAT IN, #2
+                RESERVED, #3
+                RESERVED, #4
+                POWER IN, #5
+                OAT IN, #6
+                AUDIO +, #7
+                AUDIO G, #8
+                GND #9
+    ]
+    type: D-Sub
+    subtype: female
+    pincount: 14
+    pins: [
+           4, #4
+           13, #13
+           14, #14
+           15, #15
+           16, #16
+           17, #17
+           18, #18
+           D, #D
+           P, #P
+           R, #R
+           S, #S
+           T, #T
+           U, #U
+           V #V
+           ]
+    pinlabels: [
+                NOT CONNECTED, #4
+                NOT CONNECTED, #13
+                GS -FLAG, #14
+                GS +UP, #15
+                GS +DOWN, #16
+                GS +FLAG, #17 
+                NOT CONNECTED, #18
+                NOT CONNECTED, #D
+                NOT CONNECTED, #P
+                GS -FLAG, #R
+                GS +UP, #S
+                GS +DOWN, #T
+                GS +FLAG, #U
+                NOT CONNECTED #V
+    ]
+  PTT_Button:
+    pincount: 2
+  GNC215:
+    type: D-Sub
+    subtype: female
+    pincount: 62
+    pins: [
+           21,
+           42,
+           62,
+           20,
+           41,
+           61,
+           19,
+           40,
+           60,
+           16,
+           37,
+           15,
+           36,
+           47,
+           48,
+           5,
+           26,
+           46,
+           0,
+           ]
+    pinlabels: [
+                Power In 1,
+                Power In 2,
+                Power In 3,
+                Ground 1,
+                Ground 2,
+                Ground 3, 
+                Mic 1 Audio In Hi,
+                Mic 1 Audio In Lo,
+                COM 1 Mic 1 Key,
+                COM Audio Out Hi,
+                COM Audio Out Lo,
+                NAV Audio Out Hi,
+                NAV Audio Out Lo,
+                ARINC 429 Out A,
+                ARINC 429 Out B,
+                RS-232 OUT,
+                RS-232 GND, 
+                RS-232 IN, 
+                Shield,
+                ]
+  GTR205:
+    type: D-Sub
+    subtype: female
+    pincount: 62
+    pins: [
+           21,
+           42,
+           62,
+           20,
+           41,
+           61,
+           19,
+           40,
+           60,
+           18,
+           39,
+           59,
+           16,
+           37,
+           54,
+           13,
+           34,
+           12,
+           33,
+           11,
+           32,
+           52,
+           10,
+           31,
+           51,
+           9,
+           30,
+           50,
+           5,
+           26,
+           46,
+           1,
+           23,
+           22,
+           43,
+           0,
+           ]
+    pinlabels: [
+                Power In 1,
+                Power In 2,
+                Power In 3,
+                Ground 1,
+                Ground 2,
+                Ground 3, 
+                Mic 1 Audio In Hi,
+                Mic 1 Audio In Lo,
+                Mic 1 Key,
+                Mic 2 Audio In Hi,
+                Mic 2 Audio In Lo,
+                Mic 2 Key,
+                COM Audio Out Hi,
+                COM Audio Out Lo,
+                External COM Key OUT,
+                AUX 1 Audio In Hi,
+                AUX 1 Audio In Lo,
+                AUX 2 Audio In Hi,
+                AUX 2 Audio In Lo,
+                AUX 3 Audio In Hi,
+                AUX 3/4 Audio In Lo,
+                AUX 4 Audio In Hi,
+                Headset 1 Audio Out Right,
+                Headset 1 Audio Out Lo,
+                Headset 1 Audio Out Left,
+                Headset 2 Audio Out Right,
+                Headset 2 Audio Out Lo,
+                Headset 2 Audio Out Left,
+                RS-232 OUT,
+                RS-232 GND,
+                RS-232 IN,
+                CONFIG MODULE CLOCK,
+                CONFIG MODULE GND,
+                CONFIG MODULE DATA,
+                CONFIG MODULE POWER,
+                Shield,
+                ]
+##### Cables #####
+cables:
+# Basic Wires
+  WireWHT: &template_wire_wht
+    category: bundle
+    wirecount: 1
+    colors: [WH]
+  WireShielded: &template_wire_shielded
+    colors: [WH]
+    shield: true
+## Cables
+  1C-18:
+    <<: *template_wire_wht
+    wirecount: 1
+    gauge: 18 awg
+  1C-22:
+    <<: *template_wire_wht
+    wirecount: 1
+    gauge: 22 awg
+    show_name: false         # defaults to true
+    show_wirecount: false    # defaults to true
+    show_wirenumbers: false  # defaults to true for cables; false for bundles
+
+  1CS-24:
+    <<: *template_wire_shielded
+    wirecount: 1
+    gauge: 24 awg
+  2CS-24:
+    <<: *template_wire_shielded
+    wirecount: 2
+    gauge: 24 awg
+  3CS-24:
+    <<: *template_wire_shielded
+    wirecount: 3
+    gauge: 24 awg
+  HDSB:
+    <<: *template_wire_shielded
+    wirecount: 4
+
+##### Connections #####
+connections:
+# G375 J3751
+  - # Ground
+    - J3751MainConnector: [20,38,41]
+    - 1C-22. 
+    - S.375G
+    
+  - # 375Ground
+    - 375G
+    - 1C-18.
+    - AircraftGround
+
+  - # Power
+    - J3751MainConnector: [21,42]
+    - 1C-22.
+    - S.375P
+
+  - # 375 Power
+    - 375P
+    - 1C-18.
+    - SW.GPS_CB: [Load]
+  
+  - 
+    - GPS_CB: [Supply]
+    - 1C-18.
+    - AircraftPositiveBus
+  
+
+# G375 J3752
+  - # Ground
+    - J3752ADSBNAVConnector: [30]
+    - 1C-22.
+    - 375G
+  - # Power
+    - J3752ADSBNAVConnector: [44]
+    - 1C-22.
+    - 375P
+  - # Serial to NAV COMS
+    - J3752ADSBNAVConnector: [RS-232 OUT 2,RS-232 GND,RS-232 IN 2]
+    - 3CS-24.RS232GPSTONAVCOM: [1-3]
+    - GNC215: [RS-232 IN,RS-232 GND,RS-232 OUT]
+  - # Serial Shield
+    - J3752ADSBNAVConnector: [0]
+    - RS232GPSTONAVCOM: [s]
+  - # HDSB to GI-275
+    - J3752ADSBNAVConnector: [3,4,18,19]
+    - HDSB.GPSTO275: [1,2,3,4]
+  - # HDSB Shield
+    - J3752ADSBNAVConnector: [0]
+    - GPSTO275: [s]
+# GNC215
+  - # Power to splice
+    - S.215P
+    - 1C-22.
+    - GNC215: [Power In 1, Power In 2, Power In 3]  
+  - # Splice to CB
+    - SW.NAVCOM_CB: [Load]
+    - 1C-18.
+    - 215P
+  - # CB to Bus
+    - AircraftPositiveBus
+    - 1C-18.
+    - NAVCOM_CB: [Supply]
+  - # Ground to splice
+    - S.215G
+    - 1C-22.
+    - GNC215: [Ground 1, Ground 2, Ground 3]
+  - # Splice to Ground
+    - AircraftGround
+    - 1C-18
+    - 215G
+  
+  - # ARINC to 275
+    - 2CS-24.ARINC_GNCTO275: [1-2]
+    - GNC215: [ARINC 429 Out A, ARINC 429 Out B]
+  - # ARINC GNC Shield
+    - 215G
+    - ARINC_GNCTO275: [s]
+# GTR205
+  - # Power to Splice
+    - GTR205: [Power In 1, Power In 2, Power In 3]
+    - 1C-22.
+    - S.205P
+  - # Splice to CB
+    - 205P
+    - 1C-18.
+    - SW.COM_CB: [Load]
+  - # CB to power
+    - COM_CB: [Supply]
+    - 1C-18.
+    - AircraftPositiveBus
+  - # Ground to splice
+    - GTR205: [Ground 1, Ground 2, Ground 3]
+    - 1C-22.
+    - S.205G
+  - # Splice to ground
+    - 205G
+    - 1C-18.
+    - AircraftGround
+
+  - # 205 to Mic 1
+    - GTR205: [Mic 1 Audio In Hi, Mic 1 Audio In Lo, Mic 1 Key]
+    - 3CS-24.PHeadset: [1-3]
+    - Lemo.Pilot: [Mic Hi, Mic Lo, Mic Lo]
+
+  - # P headset shield
+    - GTR205: [0]
+    - PHeadset: [s]
+
+  - # 205 to Mic 2
+    - GTR205: [Mic 2 Audio In Hi, Mic 2 Audio In Lo, Mic 2 Key]
+    - 3CS-24.CPHeadset: [1-3]
+    - Lemo.CoPilot: [Mic Hi, Mic Lo, Mic Lo]
+
+  - # CP headset shield
+    - GTR205: [0]
+    - CPHeadset: [s]
+  - # COM Audio Out to GNC
+    - GTR205: [COM Audio Out Hi, COM Audio Out Lo, External COM Key OUT]
+    - 3CS-24.COM_AUDIO_OUT: [1-3]
+    - GNC215: [Mic 1 Audio In Hi, Mic 1 Audio In Lo, COM 1 Mic 1 Key]
+  - # COM AUDIO IN FROM GNC
+    - GTR205: [AUX 1 Audio In Hi, AUX 1 Audio In Lo]
+    - 2CS-24.AUX1_In: [1-2]
+    - GNC215: [COM Audio Out Hi, COM Audio Out Lo]
+  - # AUX 1 Shield
+    - GTR205: [0]
+    - AUX1_In: [s]
+  - # NAV AUDIO IN FROM GNC
+    - GTR205: [AUX 2 Audio In Hi, AUX 2 Audio In Lo]
+    - 2CS-24.AUX2_In: [1-2]
+    - GNC215: [NAV Audio Out Hi, NAV Audio Out Lo]
+  - # AUX 2 Shield
+    - GTR205: [0]
+    - AUX2_In: [s]
+  - # 375 Traffic Audio
+    - J3751MainConnector: [46,47]
+    - 2CS-24.TrafficAudio: [1,2]
+    - GTR205: [AUX 3 Audio In Hi, AUX 3/4 Audio In Lo]
+  - # AUX 3 Shield
+    - GTR205: [0]
+    - TrafficAudio: [s]
+  - # AV 20 Alerts
+    - GTR205: [AUX 4 Audio In Hi, AUX 3/4 Audio In Lo] 
+    - 2CS-24.AV20Audio: [1,2]
+  - # AUX 4 Shield
+    - GTR205: [0]
+    - AV20Audio: [s]
+  - # Pilot Headset Audio
+    - GTR205: [Headset 1 Audio Out Right, Headset 1 Audio Out Lo, Headset 1 Audio Out Left]
+    - 3CS-24.PHeadsetSPKR: [1-3]
+    - Pilot: [Phones Right, Audio Ground, Phones Left]
+  - # Pilot Headset Shield
+    - GTR205: [0]
+    - PHeadsetSPKR: [s]
+  - # Co-Pilot Headset Audio
+    - GTR205: [Headset 2 Audio Out Right, Headset 2 Audio Out Lo, Headset 2 Audio Out Left]
+    - 3CS-24.CPHeadsetSPKR: [1-3]
+    - CoPilot: [Phones Right, Audio Ground, Phones Left]
+  - # Co-Pilot Headset Shield
+    - GTR205: [0]
+    - CPHeadsetSPKR: [s]
+  - # RS232 to GPS
+    - GTR205: [RS-232 OUT, RS-232 GND, RS-232 IN]
+    - RS232GPSTONAVCOM: [1-3]
